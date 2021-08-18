@@ -30,16 +30,18 @@ function App() {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(initialDisabled)
 
-  axios.get('https://reqres.in/api/users')
-  .then(res => {
-    setUsers(res.data.data)
-  })
-  .catch(err => console.error(err))
-
+  const getUsers = () => {
+    axios.get('https://reqres.in/api/users')
+    .then(res => {
+      setUsers(res.data)
+    })
+    .catch(err => console.error(err))
+  }
+  
   const postNewUser = newUser => {
     axios.post('https://reqres.in/api/users', newUser)
     .then(res => {
-      setUsers([res.data.data, ...users])
+      setUsers([res.data, ...users])
     })
     .catch(err => console.error(err))
 
