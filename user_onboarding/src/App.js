@@ -43,7 +43,7 @@ function App() {
     })
     .catch(err => console.error(err))
 
-    // setFormValues(initialFormValues)
+    setFormValues(initialFormValues)
   }
 
   const validate = (name, value) => {
