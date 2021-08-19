@@ -42,7 +42,7 @@ export default function Form(props) {
         
     
 
-            <label>Username&nbsp;
+            <label>Username:&nbsp;
               <input
                 value={values.username}
                 onChange={onChange}
@@ -51,7 +51,7 @@ export default function Form(props) {
               />
             </label>
     
-            <label>Email
+            <label>Email:
               <input
                 value={values.email}
                 onChange={onChange}
@@ -60,7 +60,7 @@ export default function Form(props) {
               />
             </label>
 
-            <label>Password
+            <label>Password:
               <input
                 value={values.password}
                 onChange={onChange}
@@ -71,8 +71,6 @@ export default function Form(props) {
     </div>
 
           <div className='form-group checkboxes'>
-            <h4>Hobbies</h4>
-    
             <label>Terms
               <input 
                 type='checkbox'
@@ -80,8 +78,7 @@ export default function Form(props) {
                 checked={values.terms}
                 onChange={onChange}
               />
-            </label>
-    
+            </label>  
           </div>
         </form>
       )

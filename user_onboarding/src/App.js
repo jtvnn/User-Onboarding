@@ -33,7 +33,7 @@ function App() {
   const getUsers = () => {
     axios.get('https://reqres.in/api/users')
     .then(res => {
-      setUsers(res.data)
+      setUsers(res.data.data)
     })
     .catch(err => console.error(err))
   }
@@ -71,6 +71,10 @@ function App() {
     }
     postNewUser(newUser)
   }
+
+  useEffect(() => {
+    getUsers()
+  }, [])
 
   useEffect(() => {
     schema.isValid(formValues).then(valid => setDisabled(!valid))
